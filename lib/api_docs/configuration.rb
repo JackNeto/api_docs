@@ -1,16 +1,12 @@
-module BootstrapBuilder
+module ApiDocs
   class Configuration
 
-    # The templates folder 
-    attr_accessor :template_folder
+    # Where to find the folder with the yaml docs
+    attr_accessor :yaml_docs_folder
         
-    # The templates folder 
-    attr_accessor :default_form_class
-
     # Configuration defaults
     def initialize
-      @template_folder = :bootstrap_builder
-      @default_form_class = 'form-horizontal'
+      @yaml_docs_folder = '/doc'
     end
     
   end

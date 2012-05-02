@@ -1,9 +1,6 @@
-#= require jquery
-#= require jquery_ujs
-#= require bootstrap
-#= require_tree .
-
 $ ->
+  prettyPrint();
+
   # Select the first panel and the first sub-panel
   $('ul.main-tabs a:last').tab('show')
   $('ul.sub-tabs').each ->
