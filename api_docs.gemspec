@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jack Neto", "The Working Group Inc."]
-  s.date = %q{2012-05-01}
+  s.date = %q{2012-05-02}
   s.description = %q{}
   s.email = %q{jack@twg.ca}
   s.extra_rdoc_files = [
@@ -21,17 +21,16 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "app/assets/images/whitey.png",
-    "app/assets/javascripts/api_docs/application.js.coffee",
-    "app/assets/stylesheets/api_docs/application.sass",
-    "app/controllers/api_docs_controller.rb",
+    "api_docs.gemspec",
+    "app/assets/javascripts/api_docs.js.coffee",
+    "app/assets/javascripts/prettify.js",
+    "app/assets/stylesheets/prettify.css",
+    "app/views/api_docs/_api_docs.html.haml",
     "app/views/api_docs/_curl.html.haml",
     "app/views/api_docs/_form.html.haml",
     "app/views/api_docs/_panel.html.haml",
     "app/views/api_docs/_params.html.haml",
     "app/views/api_docs/_response.html.haml",
-    "app/views/api_docs/index.html.haml",
-    "config/routes.rb",
     "lib/api_docs.rb",
     "lib/api_docs/configuration.rb",
     "lib/api_docs/engine.rb",
