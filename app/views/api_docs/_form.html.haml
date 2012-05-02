@@ -1,0 +1,17 @@
+- unless api_details['hide_form']
+  %hr/
+  %p
+    %strong Try it out: 
+    %em #{api_details['method']} #{Rocketr::API_URL}/v1#{api_details['url']}
+    = bootstrap_form_for '', :url => "#{Rocketr::API_URL}/v1#{api_details['url']}", :html => {:method => api_details['method'], :target => '_blank', :class => 'form-horizontal'} do |f|
+      - case params
+      - when Array
+        - api_details['params'].each do |param|
+          = f.text_field param, :label => param, :name => param
+      - when Hash
+        - api_details['params'].each do |param, description|
+          = f.text_field param, :label => param, :name => param, :help_block => description
+
+      .form-actions
+        = f.submit :send, :class => 'btn-primary'
+

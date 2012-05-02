@@ -1,0 +1,16 @@
+- case response[response_type]
+- when Hash
+  .span5
+    %strong= "#{response_type.capitalize} response:"
+    %pre= response[response_type].dig('response')
+    - if response[response_type].dig('data')
+      %pre= response[response_type].dig('data')
+
+- when Array
+  .span5
+    %strong= "#{response_type.capitalize} responses:"
+    - response[response_type].each do |res|
+      %pre= res.dig('response')
+      - if res.dig('data')
+        %pre= res.dig('data')
+      %hr/
