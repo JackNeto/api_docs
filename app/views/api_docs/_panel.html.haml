@@ -16,7 +16,7 @@
               = api_path
               - if api_details['method']
                 %span.label.label-important= api_details['method']
-                %small #{Rocketr::API_URL}/v1#{api_details['url']}
+                %small #{ApiDocs.config.api_url}/v1#{api_details['url']}
 
             - if api_details['description']
               %pre= api_details['description'].html_safe

@@ -38,8 +38,10 @@ Add your API documentation files to the /doc/api folder and in your view do:
 = render_api_docs %w{login users overview}
 ```
 
-## The API documentaion files
+## The API documentation files
   
+Here's a sample API for users
+
 ``` yaml
 'List':
   url: '/users'
@@ -58,27 +60,15 @@ Add your API documentation files to the /doc/api folder and in your view do:
         "users": [
           {
             "id": 27,
-            "first_name": "Andres",
-            "last_name": "Aquino",
-            "username": "eh_eh",
-            "bio": "",
-            "avatar_url": "http://.../thumb.jpg",
-            "cover_photo_url": "http://.../thumb.jpg",
-            "score": 0,
-            "relationship": ["is_friends_with"],
+            "first_name": "John",
+            "last_name": "Smith",
             "created_at": "2011-06-13T00:28:36-04:00",
             "updated_at": "2012-04-26T20:21:43-04:00"
           },
           {
             "id": 3,
-            "first_name": "Andrew",
-            "last_name": "Peek",
-            "username": "ap",
-            "bio": "A dude.",
-            "avatar_url": "http://.../thumb.jpg",
-            "cover_photo_url": "http://.../thumb.jpg",
-            "score": 0,
-            "relationship": ["is_friends_with"],
+            "first_name": "Anna",
+            "last_name": "Brown",
             "created_at": "2011-06-13T00:28:36-04:00",
             "updated_at": "2012-04-26T20:21:43-04:00"
           },
