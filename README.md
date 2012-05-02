@@ -46,10 +46,7 @@ Here's a sample API for users
 'List':
   url: '/users'
   method: GET
-  description: |
-    Returns a list of users ordered by relationship:
-      is_friends_with
-      follows
+  description: Returns a list of users
   params:
     api_key:
     keyword: "a string of one or more words used to filter the users by first_name, last_name, username and email (optional)"
@@ -85,7 +82,6 @@ Here's a sample API for users
   description: |
     Returns profile details for a specified user.
     <span class=label>NOTE</span> If showing details of another user the email is ommited
-    <span class=label>TODO</span> response is missing the counters (notebooks, notes, comments, rocketed notes, followers, following, activity feed, notifications)
   params:
     api_key:
     id: the id of a user
@@ -99,11 +95,6 @@ Here's a sample API for users
           "email": "john_smith@gmail.com",
           "first_name": "John",
           "last_name": "Smith",
-          "username": "john_smith",
-          "bio": "",
-          "avatar_url": ""http://.../photo.png",
-          "cover_photo_url": null,
-          "score": 0,
           "created_at": "2011-06-13T00:28:36-04:00",
           "updated_at": "2012-04-26T20:21:43-04:00"
         }
@@ -121,16 +112,12 @@ Here's a sample API for users
 'Create':
   url: '/users'
   method: POST
-  description: '[TODO] response is missing the counters (notebooks, notes, comments, rocketed notes, followers, following, activity feed, notifications)'
+  description: Create a user
   params:
     user[first_name]:
     user[last_name]:
     user[email]:
-    user[username]:
     user[password]:
-    user[bio]:
-    user[avatar]: "the user's avatar file"
-    user[cover_photo]: "the user's cover photo file"
   success:
     response: 'HTTP/1.1 201 Created'
     data: |
@@ -141,11 +128,6 @@ Here's a sample API for users
           "email": "john_smith@gmail.com",
           "first_name": "John",
           "last_name": "Smith",
-          "username": "john_smith",
-          "bio": "",
-          "avatar_url": ""http://.../photo.png",
-          "cover_photo_url": null,
-          "score": 0,
           "created_at": "2011-06-13T00:28:36-04:00",
           "updated_at": "2012-04-26T20:21:43-04:00"
         }
@@ -162,13 +144,10 @@ Here's a sample API for users
       }
   curl: |
     curl -i :api_url/v1/users \
-      -F "user[first_name]=Jon" \
-      -F "user[last_name]=Doe" \
-      -F "user[email]=jon2_doe@twg.ca" \
-      -F "user[username]=jon2_doe" \
-      -F "user[password]=passpass" \
-      -F "user[avatar]=@test/fixtures/upload.png" \
-      -F "user[cover_photo]=@test/fixtures/upload.png"
+      -d "user[first_name]=John" \
+      -d "user[last_name]=Smith" \
+      -d "user[email]=john_smith@twg.ca" \
+      -d "user[password]=passpass"
 ```
 
 
