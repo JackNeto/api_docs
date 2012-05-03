@@ -2,8 +2,9 @@
   %hr/
   %p
     %strong Try it out: 
-    %em #{api_details['method']} #{ApiDocs.config.api_url}/v1#{api_details['url']}
-    = bootstrap_form_for '', :url => "#{ApiDocs.config.api_url}/v1#{api_details['url']}", :html => {:method => api_details['method'], :target => '_blank', :class => 'form-horizontal', 'data-url' => "#{ApiDocs.config.api_url}/v1#{api_details['url']}"} do |f|
+    - full_url = "#{ApiDocs.config.api_url}#{api_details['url']}"
+    %em #{api_details['method']} #{full_url}
+    = bootstrap_form_for '', :url => full_url, :html => {:method => api_details['method'], :target => '_blank', :class => 'form-horizontal', 'data-url' => full_url} do |f|
       - case params
       - when Array
         - api_details['params'].each do |param|

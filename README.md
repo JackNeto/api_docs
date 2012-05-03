@@ -83,7 +83,7 @@ Here's a sample API for users
         }
       }
 
-  curl: curl -i :api_url/v1/users?api_key=7gR9hZt3DBqcuzi2mZKN
+  curl: curl -i :api_url/users?api_key=7gR9hZt3DBqcuzi2mZKN
 
 # ------------------------------
 
@@ -116,7 +116,7 @@ Here's a sample API for users
       {
         "message": "User not found"
       }
-  curl: curl -i :api_url/v1/users/197?api_key=2a10K5ipBd2qapJsPvCso90kMO
+  curl: curl -i :api_url/users/197?api_key=2a10K5ipBd2qapJsPvCso90kMO
 
 # ------------------------------
 
