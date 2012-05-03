@@ -5,13 +5,13 @@
         %ul.nav.nav-tabs.sub-tabs
           - api.each do |api_path, api_details|
             %li
-              = link_to "##{label}_#{api_details['method']}_#{api_path.gsub(/[\/\: ]/, '')}".downcase, "data-toggle" => "tab" do
+              = link_to "##{label}-#{api_path.gsub(/[\/\: ]/, '')}".downcase, "data-toggle" => "tab" do
                 = api_path
 
     %div{:class => (api.length > 1 ? 'span10' : 'span12')}
       %div{:class => ('tab-content' if api.length > 1)}
         - api.each do |api_path, api_details|
-          .tab-pane{:id => "#{label}_#{api_details['method']}_#{api_path.gsub(/[\/\: ]/, '')}".downcase}
+          .tab-pane{:id => "#{label}-#{api_path.gsub(/[\/\: ]/, '')}".downcase}
             %h3
               = api_path
               - if api_details['method']

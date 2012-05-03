@@ -49,7 +49,7 @@ Here's a sample API for users
   description: Returns a list of users
   params:
     api_key:
-    keyword: "a string of one or more words used to filter the users by first_name, last_name, username and email (optional)"
+    keyword: "a string of one or more words used to filter the users by first_name, last_name and email (optional)"
   success:
     response: 'HTTP/1.1 200 OK'
     data: |

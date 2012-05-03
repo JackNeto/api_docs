@@ -1,9 +1,9 @@
-- unless api_details['hide_form']
+- if api_details['method'].present? && %{post get}.include?(api_details['method'].downcase)
   %hr/
   %p
     %strong Try it out: 
     %em #{api_details['method']} #{ApiDocs.config.api_url}/v1#{api_details['url']}
-    = bootstrap_form_for '', :url => "#{ApiDocs.config.api_url}/v1#{api_details['url']}", :html => {:method => api_details['method'], :target => '_blank', :class => 'form-horizontal'} do |f|
+    = bootstrap_form_for '', :url => "#{ApiDocs.config.api_url}/v1#{api_details['url']}", :html => {:method => api_details['method'], :target => '_blank', :class => 'form-horizontal', 'data-url' => "#{ApiDocs.config.api_url}/v1#{api_details['url']}"} do |f|
       - case params
       - when Array
         - api_details['params'].each do |param|

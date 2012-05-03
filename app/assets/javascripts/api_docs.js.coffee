@@ -1,24 +1,37 @@
 $ ->
-  prettyPrint();
+  prettyPrint()
 
-  # Select the first panel and the first sub-panel
-  $('ul.main-tabs a:last').tab('show')
+  # Select the first panel 
+  $('ul.main-tabs li:first').removeClass('active') # wheir hack
+  $('ul.main-tabs a:first').tab('show')
+
+  # Select the first sub-panel of each tab
   $('ul.sub-tabs').each ->
     $(this).find('a:first').tab('show')
+
+  # Select a tab based on the URL
+  selectPanel window.location.hash
+
     
-  # Switch to the panel selected by the URL
-  panel_id = window.location.hash.substring(1)
-  if window.location.hash? and window.location.hash != ''
-    $('ul.main-tabs a[href="#' + panel_id + '"]').tab('show')    
-    
-  # --- Clicking on a tab ---
-  $('ul.main-tabs li a').click (event) -> 
+  # --- Clicking on a tab link ---
+  $('ul.main-tabs li a, ul.sub-tabs li a').click (event) -> 
     window.location.hash = $(this).attr('href')
     
+
   # --- Submitting the form ---
-  $('.panel form').live 'submit', (event) ->
-    action = $(this).attr('action')
-    ids = action.match(/\/(:\w*)/g)
+  $('.tab-pane form').live 'submit', (event) ->
+    url = $(this).data('url')
+    ids = url.match(/\/(:\w*)/g)
     for id in ids
-      input_field = $(this).find('input[name='+id.substring(2)+']')
-      $(this).attr('action', action.replace(id, '/' + input_field.attr('value')))
+      input_field = $(this).find('input[name=' + id.substring(2) + ']')
+      url = url.replace(id, '/' + input_field.attr('value'))
+
+
+
+selectPanel = (url)->
+  if url != ''
+    url_parts = window.location.hash.substring(1).split('-')
+    $('ul.main-tabs a[href="#' + url_parts[0] + '"]').tab('show')
+
+    if url_parts.length > 1
+      $('ul.sub-tabs a[href="' + url + '"]').tab('show')    
