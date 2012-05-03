@@ -25,7 +25,7 @@ $ ->
     for id in ids
       input_field = $(this).find('input[name=' + id.substring(2) + ']')
       url = url.replace(id, '/' + input_field.attr('value'))
-
+    $(this).attr('action', url)
 
 
 selectPanel = (url)->
