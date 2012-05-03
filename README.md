@@ -72,6 +72,17 @@ Here's a sample API for users
           ...
         ]
       }
+  fail:
+    response: 'HTTP/1.1 422 Unprocessable Entity'
+    data: |
+      {
+        "message": "Failed to create User",
+        "errors" : {
+          "email": "Email is invalid",
+          ...
+        }
+      }
+
   curl: curl -i :api_url/v1/users?api_key=7gR9hZt3DBqcuzi2mZKN
 
 # ------------------------------

@@ -10,5 +10,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = ''
   gem.email = "jack@twg.ca"
   gem.authors = ["Jack Neto", 'The Working Group Inc.']
+  gem.add_dependency('rails', '>=3.1.0')
+  gem.add_dependency('bootstrap_builder', '>=0.2.6')
 end
 Jeweler::RubygemsDotOrgTasks.new
