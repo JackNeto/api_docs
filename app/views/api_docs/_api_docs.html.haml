@@ -8,4 +8,4 @@
     - @api_docs.each do |api_tab_label, api|
       .tab-pane{:id => api_tab_label.underscore}
         - unless api.blank?
-          = render :partial => 'panel', :locals => {:label => api_tab_label, :api => api}
+          = render :partial => 'api_docs/panel', :locals => {:label => api_tab_label, :api => api}

@@ -31,7 +31,7 @@ module ApiDocs
         docs.each do |section|
           @api_docs[section] = YAML::load(File.open("#{Rails.root}#{ApiDocs.config.yaml_docs_folder}/#{section}.yml"))
         end
-        render_to_string(:partial => 'api_docs').html_safe
+        render_to_string(:partial => 'api_docs/api_docs').html_safe
       end
 
     end

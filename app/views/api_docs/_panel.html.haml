@@ -21,13 +21,13 @@
             - if api_details['description']
               %pre= api_details['description'].html_safe
             
-            = render :partial => 'params', :object => api_details['params']
+            = render :partial => 'api_docs/params', :object => api_details['params']
                 
             .row
-              = render :partial => 'response', :object => api_details, :locals => {:response_type => 'success'}
-              = render :partial => 'response', :object => api_details, :locals => {:response_type => 'fail'}
+              = render :partial => 'api_docs/response', :object => api_details, :locals => {:response_type => 'success'}
+              = render :partial => 'api_docs/response', :object => api_details, :locals => {:response_type => 'fail'}
 
-            = render :partial => 'curl', :locals => {:api_details => api_details}
+            = render :partial => 'api_docs/curl', :locals => {:api_details => api_details}
               
-            = render :partial => 'form', :locals => {:api_details => api_details}
+            = render :partial => 'api_docs/form', :locals => {:api_details => api_details}
 

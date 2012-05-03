@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{api_docs}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jack Neto", "The Working Group Inc."]
-  s.date = %q{2012-05-02}
+  s.date = %q{2012-05-03}
   s.description = %q{}
   s.email = %q{jack@twg.ca}
   s.extra_rdoc_files = [
